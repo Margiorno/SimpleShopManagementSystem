@@ -9,7 +9,6 @@ public class Cart {
     private int id;
     private HashMap<Product, Integer> products;
     private LocalDate date;
-    //ma tu być jakiś typ
 
     public Cart() {
         this.products = new HashMap<>();

@@ -1,4 +1,4 @@
-package org.dev;
+package org.dev.Rest;
 
 
 enum Category {T_SHIRT, SWEATSHIRT, PANTS, JACKET, SOCKS}
@@ -42,4 +42,6 @@ public class Product {
     public Category getCategory() {
         return category;
     }
+
+
 }

@@ -1,4 +1,4 @@
-package org.dev;
+package org.dev.Rest;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -11,8 +11,5 @@ public class Store {
         carts = new HashSet<>();
     }
 
-    public void manageInventory() {
-
-    }
 
 }

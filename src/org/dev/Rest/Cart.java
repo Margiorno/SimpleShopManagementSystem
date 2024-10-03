@@ -1,4 +1,4 @@
-package org.dev;
+package org.dev.Rest;
 
 import java.time.LocalDate;
 import java.util.HashMap;

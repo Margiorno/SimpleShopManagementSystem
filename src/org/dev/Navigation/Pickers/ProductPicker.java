@@ -1,11 +1,11 @@
-package org.dev.Navigation.UsefulClasses;
+package org.dev.Navigation.Pickers;
 
 import org.dev.Menu.MenuController;
 import org.dev.Navigation.MenuGenerator.ObjectChoiceMENU;
+import org.dev.Navigation.UsefulClasses.CategoryFilter;
 import org.dev.StoreFunctionalityClasses.Category;
 import org.dev.StoreFunctionalityClasses.Product;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class ProductPicker {

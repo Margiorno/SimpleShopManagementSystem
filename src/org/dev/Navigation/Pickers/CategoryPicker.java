@@ -1,4 +1,4 @@
-package org.dev.Navigation.UsefulClasses;
+package org.dev.Navigation.Pickers;
 
 import org.dev.Menu.MenuController;
 import org.dev.Navigation.MenuGenerator.ObjectChoiceMENU;

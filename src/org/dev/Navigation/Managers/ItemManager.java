@@ -1,4 +1,4 @@
-package org.dev.Navigation.UsefulClasses;
+package org.dev.Navigation.Managers;
 
 import org.dev.Menu.Menu;
 import org.dev.Menu.MenuController;
@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class ItemManager {
 
     public static void manageItem(InventoryItem item){
-        var menu = ItemManagementMENU.getItemManagementMenu(item);
+        var menu = ItemManagementMENU.getMenu(item);
         var menuController = new MenuController(menu);
         menuController.getAnswer();
     }
@@ -17,7 +17,7 @@ public class ItemManager {
 
 class ItemManagementMENU {
 
-    public static Menu<Void> getItemManagementMenu(InventoryItem item) {
+    public static Menu<Void> getMenu(InventoryItem item) {
 
         String title = "%s%nITEM: %s%nRESERVED/QUANTITY: %s/%s%nPRICE: %s%n%s%nITEM MANAGEMENT:".formatted("-".repeat(40),
                 item,item.getQuantityReserved(),item.getQuantityTotal(), item.getItemPrice(),"-".repeat(40));

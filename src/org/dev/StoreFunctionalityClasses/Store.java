@@ -1,8 +1,9 @@
 package org.dev.StoreFunctionalityClasses;
 
-import org.dev.Navigation.UsefulClasses.ItemManager;
+import org.dev.Navigation.Managers.ItemManager;
 import org.dev.Rest.InventoryItem;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -22,9 +23,19 @@ public class Store {
         inventory.put(product, new InventoryItem(product,0));
     }
 
+    public void remove(Product product) {
+        inventory.remove(product);
+    }
+
     public void manageItem(Product product) {
         InventoryItem item = inventory.get(product);
         ItemManager.manageItem(item);
+    }
+
+    public List<Product> getProducts() {
+        List<Product> products = new ArrayList<>();
+        inventory.forEach((product, inventoryItem) -> {products.add(product); });
+        return products;
     }
 
 

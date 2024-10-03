@@ -7,17 +7,19 @@ public class Product {
     private final String fullName;
     private final String manufacturer;
     private final Category category;
+    private double price;
 
-    public Product(String shortName, String fullName, String manufacturer, Category category) {
+    public Product(String shortName, String fullName, String manufacturer, Category category, double price) {
         this.shortName = shortName;
         this.fullName = fullName;
         this.manufacturer = manufacturer;
         this.category = category;
+        this.price = price;
     }
 
     @Override
     public String toString() {
-        return manufacturer + ", " + fullName;
+        return "%s %s: $%.2".formatted(manufacturer, fullName, price);
     }
 
     @Override
@@ -39,6 +41,14 @@ public class Product {
 
     public Category getCategory() {
         return category;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
 

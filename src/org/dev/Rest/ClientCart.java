@@ -3,14 +3,14 @@ package org.dev.Rest;
 import java.time.LocalDate;
 import java.util.HashMap;
 
-public class Cart {
+public class ClientCart {
     private static int ID = 1;
 
     private int id;
     private HashMap<Product, Integer> products;
     private LocalDate date;
 
-    public Cart() {
+    public ClientCart() {
         this.products = new HashMap<>();
         this.date = LocalDate.now();
         this.id = ID++;

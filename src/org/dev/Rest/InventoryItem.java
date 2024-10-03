@@ -47,6 +47,9 @@ public class InventoryItem {
         return itemPrice;
     }
 
+    public Product getProduct() {
+        return product;
+    }
 
     @Override
     public boolean equals(Object obj) {

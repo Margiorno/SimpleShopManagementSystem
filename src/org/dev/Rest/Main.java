@@ -1,24 +1,33 @@
 package org.dev.Rest;
 
-import org.dev.Interfaces.OtherInterfaces.ProductConstructionInterface;
+import org.dev.Navigation.MenuGenerator.ObjectChoiceMENU;
 import org.dev.Menu.ConsoleMenuInput;
 import org.dev.Menu.Menu;
 import org.dev.Menu.MenuController;
-import org.dev.Interfaces.MenuInterfaces.categoryMENU;
+
+import java.util.*;
 
 public class Main {
     private static final ConsoleMenuInput consoleMenuInput = new ConsoleMenuInput();
 
     public static void main(String[] args) {
-//        Menu<Category> categoryMenu = categoryMENU.constructMenu();
-//        MenuController<Category> controller = new MenuController<>(categoryMenu, consoleMenuInput);
-//
-//
-//        Category value = controller.getAnswer();
-//        System.out.printf("Value of choice: %s%nClass: %s%n",value.toString(),value.getClass().getSimpleName());
+        Menu<Category> categoryMenu = ObjectChoiceMENU.getMenu("CATEGORIES",Arrays.asList(Category.values()));
+        MenuController<Category> categoryMenuController = new MenuController<>(categoryMenu, consoleMenuInput);
 
-        Product product = ProductConstructionInterface.getProduct();
-        System.out.println(product);
+
+        List<Product> products = new ArrayList<>();
+        List<InventoryItem> items = new ArrayList<>();
+        Random rand = new Random();
+
+        products.add(new Product("ACM_AW_TS","Ac Milan Away t-shirt","Puma",Category.T_SHIRT, rand.nextDouble(100,200)));
+        products.add(new Product("RMCF_BLA_BL","Real Madrid black blouse","Adidas",Category.JACKET, rand.nextDouble(100,200)));
+        products.add(new Product("ACM_HO_TS","Ac Milan Home t-shirt","Puma",Category.T_SHIRT, rand.nextDouble(100,200)));
+        products.add(new Product("CHE_AW_TS","Chelsea Away t-shirt","Adidas",Category.T_SHIRT, rand.nextDouble(100,200)));
+        products.add(new Product("WIS_BLA_PA","Wisla Black pants","Adidas",Category.PANTS, rand.nextDouble(100,200)));
+        products.add(new Product("ACM_WHI_PA","Ac Milan White pants","Puma",Category.PANTS, rand.nextDouble(100,200)));
+
+        products.forEach((product -> items.add(new InventoryItem(product, rand.nextDouble(100,200)))));
+
 
 
 

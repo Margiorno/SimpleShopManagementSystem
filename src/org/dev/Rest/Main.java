@@ -4,6 +4,8 @@ import org.dev.Navigation.MenuGenerator.ObjectChoiceMENU;
 import org.dev.Menu.ConsoleMenuInput;
 import org.dev.Menu.Menu;
 import org.dev.Menu.MenuController;
+import org.dev.StoreFunctionalityClasses.Category;
+import org.dev.StoreFunctionalityClasses.Product;
 
 import java.util.*;
 
@@ -19,12 +21,12 @@ public class Main {
         List<InventoryItem> items = new ArrayList<>();
         Random rand = new Random();
 
-        products.add(new Product("ACM_AW_TS","Ac Milan Away t-shirt","Puma",Category.T_SHIRT, rand.nextDouble(100,200)));
-        products.add(new Product("RMCF_BLA_BL","Real Madrid black blouse","Adidas",Category.JACKET, rand.nextDouble(100,200)));
-        products.add(new Product("ACM_HO_TS","Ac Milan Home t-shirt","Puma",Category.T_SHIRT, rand.nextDouble(100,200)));
-        products.add(new Product("CHE_AW_TS","Chelsea Away t-shirt","Adidas",Category.T_SHIRT, rand.nextDouble(100,200)));
-        products.add(new Product("WIS_BLA_PA","Wisla Black pants","Adidas",Category.PANTS, rand.nextDouble(100,200)));
-        products.add(new Product("ACM_WHI_PA","Ac Milan White pants","Puma",Category.PANTS, rand.nextDouble(100,200)));
+        products.add(new Product("ACM_AW_TS","Ac Milan Away t-shirt","Puma",Category.T_SHIRT));
+        products.add(new Product("RMCF_BLA_BL","Real Madrid black blouse","Adidas",Category.JACKET));
+        products.add(new Product("ACM_HO_TS","Ac Milan Home t-shirt","Puma",Category.T_SHIRT));
+        products.add(new Product("CHE_AW_TS","Chelsea Away t-shirt","Adidas",Category.T_SHIRT));
+        products.add(new Product("WIS_BLA_PA","Wisla Black pants","Adidas",Category.PANTS));
+        products.add(new Product("ACM_WHI_PA","Ac Milan White pants","Puma",Category.PANTS));
 
         products.forEach((product -> items.add(new InventoryItem(product, rand.nextDouble(100,200)))));
 

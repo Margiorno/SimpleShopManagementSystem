@@ -1,11 +1,11 @@
 package org.dev.Navigation.OtherInterfaces;
 
 import org.dev.Menu.ConsoleMenuInput;
-import org.dev.Rest.Product;
+import org.dev.StoreFunctionalityClasses.Product;
 
 import java.util.Scanner;
 
-public class ProductConstructionInterface {
+public class ProductConstructor {
     private static Scanner sc = new Scanner(System.in);
     private static final ConsoleMenuInput consoleMenuInput = new ConsoleMenuInput();
 

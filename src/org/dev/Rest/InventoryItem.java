@@ -1,11 +1,18 @@
 package org.dev.Rest;
 
+import org.dev.Menu.MenuOption;
+import org.dev.StoreFunctionalityClasses.Product;
+
 public class InventoryItem {
 
     private final Product product;
     private int quantityTotal;
     private int quantityReserved;
     private double itemPrice;
+
+    public void setItemPrice(double itemPrice) {
+        this.itemPrice = itemPrice;
+    }
 
     public InventoryItem(Product product, double itemPrice) {
         this.product = product;
@@ -39,12 +46,20 @@ public class InventoryItem {
         return true;
     }
 
-    private void placeInventoryOrder(int quantity) {
+    public void placeInventoryOrder(int quantity) {
         this.quantityTotal+=quantity;
     }
 
     public double getItemPrice() {
         return itemPrice;
+    }
+
+    public int getQuantityTotal() {
+        return quantityTotal;
+    }
+
+    public int getQuantityReserved() {
+        return quantityReserved;
     }
 
     public Product getProduct() {

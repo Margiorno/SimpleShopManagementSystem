@@ -1,4 +1,4 @@
-package org.dev.Rest;
+package org.dev.StoreFunctionalityClasses;
 
 import java.time.LocalDate;
 import java.util.HashMap;

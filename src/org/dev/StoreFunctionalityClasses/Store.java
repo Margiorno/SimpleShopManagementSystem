@@ -15,12 +15,20 @@ public class Store {
         inventory = new HashMap<>();
     }
 
-    public void importProducts(List<Product> products) {
+    public void importItems(List<InventoryItem> items) {
+        items.forEach(this::add);
+    }
+
+    public void importProducts(List<InventoryItem> products) {
         products.forEach(this::add);
     }
 
     public void add(Product product) {
         inventory.put(product, new InventoryItem(product,0));
+    }
+
+    public void add(InventoryItem item) {
+        inventory.put(item.getProduct(), item);
     }
 
     public void remove(Product product) {

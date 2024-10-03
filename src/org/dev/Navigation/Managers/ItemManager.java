@@ -19,7 +19,7 @@ class ItemManagementMENU {
 
     public static Menu<Void> getMenu(InventoryItem item) {
 
-        String title = "%s%nITEM: %s%nRESERVED/QUANTITY: %s/%s%nPRICE: %s%n%s%nITEM MANAGEMENT:".formatted("-".repeat(40),
+        String title = "%s%nITEM: %s%nRESERVED/QUANTITY: %s/%s%nPRICE: $%.2f%n%s%nITEM MANAGEMENT:".formatted("-".repeat(40),
                 item,item.getQuantityReserved(),item.getQuantityTotal(), item.getItemPrice(),"-".repeat(40));
 
         Menu<Void> menu = new Menu<>(title);
@@ -30,13 +30,9 @@ class ItemManagementMENU {
         });
         menu.addMenuOption("Set price",()->{
             System.out.print("New price: ");
-            item.setItemPrice(new Scanner(System.in).nextInt());
+            item.setItemPrice(new Scanner(System.in).nextDouble());
             return null;
         });
-
-
-
-
         return menu;
     }
 }

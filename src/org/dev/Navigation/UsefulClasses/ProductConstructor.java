@@ -1,6 +1,5 @@
 package org.dev.Navigation.UsefulClasses;
 
-import org.dev.Menu.ConsoleMenuInput;
 import org.dev.Navigation.Pickers.CategoryPicker;
 import org.dev.StoreFunctionalityClasses.Category;
 import org.dev.StoreFunctionalityClasses.Product;

@@ -1,22 +1,30 @@
 package org.dev.Rest;
 
-import org.dev.Navigation.MenuGenerator.ObjectChoiceMENU;
-import org.dev.Menu.ConsoleMenuInput;
-import org.dev.Menu.Menu;
-import org.dev.Menu.MenuController;
+import org.dev.Navigation.Managers.StoreManager;
 import org.dev.StoreFunctionalityClasses.Category;
 import org.dev.StoreFunctionalityClasses.Product;
+import org.dev.StoreFunctionalityClasses.Store;
 
 import java.util.*;
 
 public class Main {
-    private static final ConsoleMenuInput consoleMenuInput = new ConsoleMenuInput();
 
     public static void main(String[] args) {
-        Menu<Category> categoryMenu = ObjectChoiceMENU.getMenu("CATEGORIES",Arrays.asList(Category.values()));
-        MenuController<Category> categoryMenuController = new MenuController<>(categoryMenu, consoleMenuInput);
+        Store store = new Store();
+        List<InventoryItem> data = dataTest();
+        store.importItems(data);
+
+        StoreManager.manageStore(store);
 
 
+
+
+
+
+
+    }
+
+    private static List<InventoryItem> dataTest(){
         List<Product> products = new ArrayList<>();
         List<InventoryItem> items = new ArrayList<>();
         Random rand = new Random();
@@ -30,8 +38,6 @@ public class Main {
 
         products.forEach((product -> items.add(new InventoryItem(product, rand.nextDouble(100,200)))));
 
-
-
-
+        return items;
     }
 }

@@ -1,17 +1,14 @@
 package org.dev.Menu;
 
 import java.util.LinkedList;
-import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Menu<T> {
-    private LinkedList<MenuOption<T>> menuOptions_operations;
-    private MenuInput menuInput;
-    private MenuDisplay<T> menuDisplay;
+    private final LinkedList<MenuOption<T>> menuOptions_operations;
+    private final MenuDisplay<T> menuDisplay;
 
-    public Menu(String title, MenuInput menuInput) {
+    public Menu(String title) {
         this.menuOptions_operations = new LinkedList<>();
-        this.menuInput = menuInput;
         this.menuDisplay = new MenuDisplay<T>(title);
     }
 
@@ -25,16 +22,12 @@ public class Menu<T> {
         menuDisplay.addMenuOption(description);
     }
 
-    public T menuInterface(){
-        menuDisplay.displayOptions();
-        int option = menuInput.getUserInput();
+    public MenuDisplay<T> getMenuDisplay() {
+        return menuDisplay;
+    }
 
-        while (option < 0 || option >= menuOptions_operations.size()){
-            System.out.print("Invalid choice! Pick your option: ");
-            option = menuInput.getUserInput();
-        }
-
-        return menuOptions_operations.get(option).execute();
+    public LinkedList<MenuOption<T>> getMenuOptions() {
+        return menuOptions_operations;
     }
 }
 

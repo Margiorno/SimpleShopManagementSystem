@@ -7,10 +7,10 @@ public class InventoryItem {
     private int quantityReserved;
     private double itemPrice;
 
-    public InventoryItem(Product product, double itemPrice, int quantityReorder, int quantityLow) {
+    public InventoryItem(Product product, double itemPrice) {
         this.product = product;
         this.itemPrice = itemPrice;
-        this.quantityTotal = quantityReorder + quantityLow;
+        this.quantityTotal = 0;
         this.quantityReserved = 0;
     }
 

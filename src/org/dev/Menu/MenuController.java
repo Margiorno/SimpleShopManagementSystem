@@ -9,7 +9,7 @@ public class MenuController<T> {
         this.menuInput = menuInput;
     }
 
-    public T menuInterface(){
+    public T getAnswer(){
         menu.getMenuDisplay().displayOptions();
         int option = menuInput.getUserInput();
 

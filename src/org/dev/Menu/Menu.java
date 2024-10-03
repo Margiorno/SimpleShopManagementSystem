@@ -47,10 +47,11 @@ class MenuDisplay<T>{
     public void displayOptions()
     {
         AtomicInteger counter = new AtomicInteger();
-
-        System.out.println(this.title);
+        System.out.println("-".repeat(40));
+        System.out.println(this.title.toUpperCase());
         menuOptions_descriptions.forEach((option) -> {
             System.out.printf("[%d] %s%n", counter.getAndIncrement(),option);
         });
+        System.out.println("-".repeat(40));
     }
 }
